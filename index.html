@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Приглашение на свадьбу</title>
+
+<style>
+body{
+margin:0;
+font-family: 'Arial', sans-serif;
+text-align:center;
+background:#fff8f5;
+color:#333;
+}
+
+header{
+background:url("https://images.unsplash.com/photo-1519741497674-611481863552") center/cover;
+height:100vh;
+display:flex;
+flex-direction:column;
+justify-content:center;
+color:white;
+}
+
+h1{
+font-size:60px;
+margin:0;
+}
+
+h2{
+font-weight:300;
+}
+
+section{
+padding:60px 20px;
+}
+
+.date{
+font-size:30px;
+color:#c48b9f;
+}
+
+.timer{
+font-size:28px;
+margin-top:20px;
+}
+
+.footer{
+background:#f2e6e9;
+padding:20px;
+}
+</style>
+</head>
+
+<body>
+
+<header>
+<h1>Анна & Сергей</h1>
+<h2>Приглашают вас на свадьбу</h2>
+</header>
+
+<section>
+<h2>Дата свадьбы</h2>
+<p class="date">15 августа 2026</p>
+
+<div class="timer" id="timer"></div>
+</section>
+
+<section>
+<h2>Место проведения</h2>
+<p>Ресторан "Golden Garden"</p>
+<p>Москва</p>
+</section>
+
+<section>
+<h2>Будем рады видеть вас!</h2>
+<p>Подтвердите своё присутствие</p>
+<button>Я приду</button>
+</section>
+
+<div class="footer">
+<p>С любовью, Анна и Сергей</p>
+</div>
+
+<script>
+
+const weddingDate = new Date("Aug 15, 2026 15:00:00").getTime();
+
+const timer = setInterval(function(){
+
+const now = new Date().getTime();
+const distance = weddingDate - now;
+
+const days = Math.floor(distance / (1000*60*60*24));
+const hours = Math.floor((distance%(1000*60*60*24))/(1000*60*60));
+const minutes = Math.floor((distance%(1000*60*60))/(1000*60));
+
+document.getElementById("timer").innerHTML =
+days + " дней " + hours + " часов " + minutes + " минут";
+
+},1000);
+
+</script>
+
+</body>
+</html>
+</body>
+
+</html>
+<!-- update -->
